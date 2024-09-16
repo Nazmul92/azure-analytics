@@ -2,7 +2,7 @@
 	"name": "SQL script 2",
 	"properties": {
 		"content": {
-			"query": "SELECT COUNT(*) AS NullCount\nFROM athletes\nWHERE PersonName IS NULL OR Country IS NULL OR Discipline IS NULL;",
+			"query": "SELECT TOP 10 Country, COUNT(*) AS AthletesCount\nFROM athletes\nGROUP by Country\nORDER BY AthletesCount DESC;",
 			"metadata": {
 				"language": "sql"
 			},
