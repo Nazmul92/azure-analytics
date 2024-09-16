@@ -1,0 +1,17 @@
+{
+	"name": "Highest_female_participation_by_discipline",
+	"properties": {
+		"content": {
+			"query": "SELECT Discipline, Female, Total,\n(Female*1.0/Total)*100 AS FemalePercentage\nFROM entriesgender\nWHERE Female>Male\nORDER BY FemalePercentage DESC;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tokyo_olympic_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
