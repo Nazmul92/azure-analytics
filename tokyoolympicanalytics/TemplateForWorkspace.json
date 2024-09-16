@@ -94,32 +94,12 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('workspaceName'), '/SQL script 1')]",
+			"name": "[concat(parameters('workspaceName'), '/Top_10_country_by_athletes_count')]",
 			"type": "Microsoft.Synapse/workspaces/sqlscripts",
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
 				"content": {
-					"query": "SELECT country FROM athletes;\n",
-					"metadata": {
-						"language": "sql"
-					},
-					"currentConnection": {
-						"databaseName": "tokyo_olympic_db",
-						"poolName": "Built-in"
-					},
-					"resultLimit": 5000
-				},
-				"type": "SqlQuery"
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('workspaceName'), '/SQL script 2')]",
-			"type": "Microsoft.Synapse/workspaces/sqlscripts",
-			"apiVersion": "2019-06-01-preview",
-			"properties": {
-				"content": {
-					"query": "SELECT TOP 10 Discipline, COUNT(*) AS AthletesCount\nFROM athletes\nGROUP by Discipline\nORDER BY AthletesCount DESC;",
+					"query": "SELECT TOP 10 Country, COUNT(*) AS AthletesCount\nFROM athletes\nGROUP by Country\nORDER BY AthletesCount DESC;",
 					"metadata": {
 						"language": "sql"
 					},
@@ -897,6 +877,24 @@
 						}
 					}
 				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/SQL script 1')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"databaseName": "tokyo_olympic_db",
+						"poolName": "Built-in"
+					}
+				}
 			},
 			"dependsOn": []
 		}
