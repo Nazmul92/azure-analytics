@@ -1,0 +1,17 @@
+{
+	"name": "Male_female_percentage_by_discipline",
+	"properties": {
+		"content": {
+			"query": "SELECT Discipline, Female, Male, Total,\n (Female*1.0/Total)*100 AS FemalePercentage,\n (Male*1.0/Total)*100 AS MalePercentage\nFROM entriesgender\nORDER BY Total;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tokyo_olympic_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
