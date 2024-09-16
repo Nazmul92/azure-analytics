@@ -119,7 +119,7 @@
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
 				"content": {
-					"query": "SELECT TOP 10 Country, COUNT(*) AS AthletesCount\nFROM athletes\nGROUP by Country\nORDER BY AthletesCount DESC;",
+					"query": "SELECT TOP 10 Discipline, COUNT(*) AS AthletesCount\nFROM athletes\nGROUP by Discipline\nORDER BY AthletesCount DESC;",
 					"metadata": {
 						"language": "sql"
 					},
