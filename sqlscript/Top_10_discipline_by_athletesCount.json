@@ -1,0 +1,17 @@
+{
+	"name": "Top_10_discipline_by_athletesCount",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP 10 Discipline, COUNT(*) AS AthletesCount\nFROM athletes\nGROUP BY Discipline\nORDER BY AthletesCount DESC;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tokyo_olympic_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
