@@ -1,0 +1,17 @@
+{
+	"name": "Correlation_athletes_total_madels",
+	"properties": {
+		"content": {
+			"query": "SELECT a.Country, COUNT(a.PersonName) AS AthleteCount, m.Total AS TotalMedals\nFROM athletes a\nJOIN medals m ON a.Country = m.TeamCountry\nGROUP BY a.Country, m.Total\nORDER BY TotalMedals DESC;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tokyo_olympic_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
