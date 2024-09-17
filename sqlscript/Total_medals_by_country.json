@@ -1,0 +1,17 @@
+{
+	"name": "Total_medals_by_country",
+	"properties": {
+		"content": {
+			"query": "SELECT TeamCountry, Gold, Silver, Bronze, Total\nFROM medals\nORDER BY Total DESC;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tokyo_olympic_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
