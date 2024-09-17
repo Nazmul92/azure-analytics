@@ -1,0 +1,17 @@
+{
+	"name": "Top_10_country_by_gold",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP 10 TeamCountry, Gold\nFROM medals\nORDER BY Gold DESC;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tokyo_olympic_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
