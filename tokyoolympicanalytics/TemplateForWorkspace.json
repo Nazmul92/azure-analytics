@@ -94,6 +94,26 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('workspaceName'), '/Correlation_athletes_total_madels')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "SELECT a.Country, COUNT(a.PersonName) AS AthleteCount, m.Total AS TotalMedals\nFROM athletes a\nJOIN medals m ON a.Country = m.TeamCountry\nGROUP BY a.Country, m.Total\nORDER BY TotalMedals DESC;\n",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"databaseName": "tokyo_olympic_db",
+						"poolName": "Built-in"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('workspaceName'), '/Highest_female_participation_by_discipline')]",
 			"type": "Microsoft.Synapse/workspaces/sqlscripts",
 			"apiVersion": "2019-06-01-preview",
