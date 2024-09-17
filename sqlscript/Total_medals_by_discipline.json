@@ -1,0 +1,17 @@
+{
+	"name": "Total_medals_by_discipline",
+	"properties": {
+		"content": {
+			"query": "SELECT Discipline, SUM(m.Gold) AS Gold, SUM(m.Silver) AS Silver, SUM(m.Bronze) AS Bronze, SUM(m.Total) AS TotalMedals\nFROM teams t\nJOIN medals m ON t.Country = m.TeamCountry\nGROUP BY Discipline\nORDER BY TotalMedals DESC;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tokyo_olympic_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
