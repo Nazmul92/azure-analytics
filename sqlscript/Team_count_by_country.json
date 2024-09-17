@@ -1,0 +1,17 @@
+{
+	"name": "Team_count_by_country",
+	"properties": {
+		"content": {
+			"query": "SELECT Country, COUNT(DISTINCT TeamName) AS TeamCount\nFROM teams\nGROUP BY Country\nORDER BY TeamCount DESC;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tokyo_olympic_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
