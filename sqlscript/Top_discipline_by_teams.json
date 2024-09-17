@@ -1,0 +1,17 @@
+{
+	"name": "Top_discipline_by_teams",
+	"properties": {
+		"content": {
+			"query": "SELECT Discipline, COUNT(DISTINCT TeamName) AS TeamCount\nFROM teams\nGROUP BY Discipline\nORDER BY TeamCount DESC;\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tokyo_olympic_db",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
